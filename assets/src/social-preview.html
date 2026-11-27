@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Render: chrome --headless --screenshot=social-preview.png --window-size=1280,640 social-preview.html -->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: #e6edf3;
+    background:
+      radial-gradient(900px 500px at 100% 0%, rgba(214, 109, 60, .22), transparent 60%),
+      radial-gradient(700px 400px at 0% 100%, rgba(30, 90, 120, .25), transparent 60%),
+      #0d1117;
+    padding: 104px 72px;
+    position: relative;
+  }
+  .kicker { color: #e07a4f; letter-spacing: .14em; font-size: 22px; font-weight: 600; }
+  .cmd {
+    position: absolute; top: 98px; right: 72px;
+    font: 500 21px "Cascadia Mono", Consolas, monospace;
+    background: #161b22; border: 1px solid #30363d; border-radius: 999px; padding: 7px 16px;
+  }
+  h1 { font-size: 92px; font-weight: 800; letter-spacing: -.035em; margin-top: 4px; line-height: 1.12; }
+  h1 .dash { color: #8b949e; }
+  .tag { font-size: 31px; color: #c9d1d9; margin-top: 10px; line-height: 1.4; }
+  .tag b { color: #fff; }
+
+  .term { margin-top: 34px; background: #010409; border: 1px solid #30363d; border-radius: 14px; overflow: hidden; }
+  .tabs { display: flex; gap: 2px; background: #161b22; padding: 8px 8px 0; }
+  .tab {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 19px; color: #8b949e; padding: 10px 18px; border-radius: 9px 9px 0 0;
+    white-space: nowrap;
+  }
+  .tab.on { background: #010409; color: #e6edf3; }
+  .sq { width: 15px; height: 15px; border-radius: 3px; flex: none; }
+  .g { background: #3fb950; } .b { background: #388bfd; } .p { background: #a371f7; } .o { background: #f0883e; }
+  .body { padding: 18px 24px 20px; font: 20px "Cascadia Mono", Consolas, monospace; line-height: 1.75; }
+  .dim { color: #6e7681; }
+  .green { color: #3fb950; }
+  .bold { font-weight: 700; }
+  .row { display: flex; align-items: center; gap: 10px; }
+</style>
+</head>
+<body>
+  <div class="kicker">FOR CLAUDE CODE</div>
+  <div class="cmd">npx claude-tab-label init</div>
+  <h1>claude<span class="dash">-</span>tab<span class="dash">-</span>label</h1>
+  <p class="tag">Know what <b>each terminal</b> is working on <b>now</b>, not what you asked first.</p>
+
+  <div class="term">
+    <div class="tabs">
+      <div class="tab on"><span class="sq g"></span>fix refund rounding test</div>
+      <div class="tab"><span class="sq b"></span>write the DB migration</div>
+      <div class="tab"><span class="sq p"></span>update README badges</div>
+      <div class="tab"><span class="sq o"></span>why is CI red on Windows…</div>
+    </div>
+    <div class="body">
+      <div class="row"><span class="sq g"></span><span class="green bold">payments</span><span class="dim">·</span><span class="green">"fix refund rounding test"</span></div>
+      <div class="dim">Ctx 18% · gh:work-account · claude:company.example (max)</div>
+    </div>
+  </div>
+</body>
+</html>
